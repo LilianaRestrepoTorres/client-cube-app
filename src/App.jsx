@@ -11,7 +11,8 @@ function App() {
 
   const fetchFiles = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:3000/files/data");
+      const serverUrl = `${import.meta.env.VITE_SERVER_URL}/files/data`;
+      const response = await fetch(serverUrl);
       if (!response.ok) {
         throw new Error("Network response was not ok.");
       }
