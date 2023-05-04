@@ -1,5 +1,8 @@
 # Frontend Files Application
 ---
+
+:rocket: Go to the deployed app: [![Deployed](https://img.shields.io/badge/Deployed-Live-green.svg)](https://client-cube-app.vercel.app/)
+
 This is the frontend side of Files Application.
 
 ## Config-environment
@@ -40,7 +43,7 @@ Perfect! Let's clone the repo, and install the dependencies of the project.
 
 1. Fetching Data - Hook
     ```sh
-    Fetch call http://localhost:3000/files/data
+    Fetch call http://${host}/files/data
     ```
 2. Components
        
@@ -48,9 +51,9 @@ Perfect! Let's clone the repo, and install the dependencies of the project.
     
    
 ## Preview
-<img width="879" alt="TableFormattedFilesData" src="https://user-images.githubusercontent.com/17114826/236253910-f006898d-aeed-4bde-b208-d584ce93d66a.png">
 
 
+<img width="1276" alt="TableFormattedFilesDataApp" src="https://user-images.githubusercontent.com/17114826/236275764-1272d507-4651-462e-9290-fb3580c94a7a.png">
 
 
 
