@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import Table from "react-bootstrap/Table";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Table from "react-bootstrap/Table";
+import Navbar from 'react-bootstrap/Navbar';
+import './App.css';
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -27,34 +29,39 @@ function App() {
 
   return (
     <>
+      <Navbar bg="danger" variant="dark">
+        <Navbar.Brand>React Test App</Navbar.Brand>
+      </Navbar>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <Table striped bordered hover size="sm">
-          <thead>
-            <tr>
-              <th>File Name</th>
-              <th>Text</th>
-              <th>Number</th>
-              <th>Hex</th>
-            </tr>
-          </thead>
-          <tbody>
-            {files.map((file) =>
-              file.lines.map((line, index) => (
-                <tr key={`${file.filename}-${index}`}>
-                  <td>{line.file}</td>
-                  <td>{line.text}</td>
-                  <td>{line.number}</td>
-                  <td>{line.hex}</td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </Table>
+        <div className="table-files">
+          <Table striped bordered hover size="sm">
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Text</th>
+                <th>Number</th>
+                <th>Hex</th>
+              </tr>
+            </thead>
+            <tbody>
+              {files.map((file) =>
+                file.lines.map((line, index) => (
+                  <tr key={`${file.filename}-${index}`}>
+                    <td>{line.file}</td>
+                    <td>{line.text}</td>
+                    <td>{line.number}</td>
+                    <td>{line.hex}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </Table>
+        </div>
       )}
     </>
   );
-};
+}
 
 export default App;
