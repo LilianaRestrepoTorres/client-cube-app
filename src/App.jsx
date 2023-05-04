@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TableComponent from "./TableComponent";
 import Navbar from 'react-bootstrap/Navbar';
+import Spinner from 'react-bootstrap/Spinner';
 import './App.css';
 
 function App() {
@@ -33,7 +34,9 @@ function App() {
         <Navbar.Brand>React Test App</Navbar.Brand>
       </Navbar>
       {isLoading ? (
-        <div className="table-files">Loading...</div>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       ) : (
         <div className="table-files">
           <TableComponent files={files} />
